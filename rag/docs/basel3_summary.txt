@@ -1,0 +1,223 @@
+BASEL III / BASEL IV REGULATORY FRAMEWORK — RISK MANAGEMENT REFERENCE
+RiskLens Regulatory Knowledge Base | Version 1.0
+
+================================================================================
+OVERVIEW
+================================================================================
+
+Basel III is the third iteration of the Basel Accords, a set of international
+banking regulations developed by the Basel Committee on Banking Supervision (BCBS)
+at the Bank for International Settlements (BIS). Following the 2007–2008 Global
+Financial Crisis, Basel III was introduced to strengthen capital requirements,
+improve risk measurement, and reduce systemic risk in the global banking system.
+Basel IV (formally the "Basel III Endgame" or "Finalising Basel III") refers to
+the 2017 reforms that complete the post-crisis regulatory overhaul.
+
+================================================================================
+THE THREE PILLARS OF BASEL III
+================================================================================
+
+PILLAR 1 — MINIMUM CAPITAL REQUIREMENTS
+The core quantitative framework. Banks must hold sufficient capital against three
+categories of risk: credit risk, market risk, and operational risk. The capital
+requirement is expressed as a ratio of risk-weighted assets (RWA).
+
+Capital Adequacy Ratios (minimum thresholds):
+  - Common Equity Tier 1 (CET1): 4.5% of RWA
+    CET1 is the highest-quality capital: retained earnings + common equity shares.
+    It absorbs losses first. The 4.5% minimum is non-negotiable.
+
+  - Tier 1 Capital: 6.0% of RWA
+    Tier 1 = CET1 + Additional Tier 1 (AT1, e.g. perpetual bonds with loss absorption).
+    Represents going-concern capital — keeps the bank alive during stress.
+
+  - Total Capital (Tier 1 + Tier 2): 8.0% of RWA
+    Tier 2 includes subordinated debt, loan loss provisions. Represents gone-concern
+    capital — helps absorb losses in resolution/wind-down.
+
+  - Capital Conservation Buffer: +2.5% CET1 above minimum (fully phased in as of 2019)
+    When breached, dividend and bonus payments are automatically restricted.
+    Effective minimum CET1 = 4.5% + 2.5% = 7.0%.
+
+  - Countercyclical Capital Buffer (CCyB): 0–2.5% CET1, set by national regulators
+    Activated in periods of excessive credit growth to build reserves for downturns.
+
+  - Global Systemically Important Bank (G-SIB) surcharge: 1–3.5% additional CET1
+    Applied to RBC, TD, Scotiabank, and other systemically important institutions.
+
+PILLAR 2 — SUPERVISORY REVIEW PROCESS (SRP)
+Qualitative oversight framework. Regulators (OSFI in Canada, ECB in Europe, Fed/OCC
+in the US) conduct the Internal Capital Adequacy Assessment Process (ICAAP) review.
+Banks must demonstrate that their internal risk models and capital assessments are
+sound. Regulators can impose Pillar 2 add-ons above the Pillar 1 minimums when
+internal models are deemed insufficient or when institution-specific risks (e.g.
+concentration risk, interest rate risk in the banking book) are not captured by
+standardised approaches.
+
+PILLAR 3 — MARKET DISCIPLINE AND PUBLIC DISCLOSURE
+Banks must disclose sufficient information to allow external parties (investors,
+counterparties, analysts) to assess their risk profile and capital adequacy.
+Required disclosures include: capital composition tables, RWA breakdown by risk
+category, VaR/CVaR model outputs, liquidity metrics, and leverage ratios.
+The transparency requirement is specifically designed to reinforce Pillars 1 and 2
+through market pressure — counterparties will price credit risk higher for banks
+with opaque or high-risk profiles.
+
+================================================================================
+CREDIT RISK — MEASUREMENT APPROACHES
+================================================================================
+
+STANDARDISED APPROACH (SA)
+Uses externally published credit ratings (Moody's, S&P, Fitch) to assign risk weights.
+A corporate bond rated AAA carries 20% risk weight; an unrated corporate gets 100%.
+Simple to implement but relies on external ratings which can be slow to react to
+deteriorating credit quality (as demonstrated in the 2008 crisis).
+
+INTERNAL RATINGS-BASED APPROACH (IRB)
+Banks use internal models to estimate credit risk parameters:
+  - PD (Probability of Default): likelihood borrower defaults within 1 year
+  - LGD (Loss Given Default): fraction of exposure lost if default occurs
+  - EAD (Exposure at Default): total outstanding amount at time of default
+  - M (Maturity): effective maturity of the exposure
+
+Foundation IRB (F-IRB): banks estimate PD only; regulator sets LGD and EAD.
+Advanced IRB (A-IRB): banks estimate all parameters, subject to model validation.
+
+Expected Loss (EL) = PD × LGD × EAD
+Unexpected Loss (UL) — what capital must cover — is derived from the Vasicek model
+underlying the Basel credit risk capital formula (asymptotic single risk factor model).
+
+Key Risk Flags:
+  - PD > 5%: Watch-list credit
+  - PD > 15%: Non-performing credit
+  - LGD > 65%: Unsecured/subordinated exposure with high loss severity
+  - CET1 ratio approaching 7% (conservation buffer): capital constraint risk
+
+ALTMAN Z-SCORE (PROXY FOR PUBLIC COMPANIES)
+Z = 1.2*X1 + 1.4*X2 + 3.3*X3 + 0.6*X4 + 1.0*X5
+Where: X1=working capital/assets, X2=retained earnings/assets,
+X3=EBIT/assets, X4=market cap/book liabilities, X5=revenue/assets
+Z < 1.81: Distress zone | 1.81–2.99: Grey zone | Z > 2.99: Safe zone
+
+================================================================================
+MARKET RISK — MEASUREMENT APPROACHES
+================================================================================
+
+VALUE AT RISK (VaR)
+Under Basel II, VaR was the primary market risk metric. Banks calculated 10-day
+99% VaR for the trading book. The capital charge was 3× the average 60-day VaR.
+VaR Limitations (known as the "VaR Shortfalls"):
+  1. Not sub-additive: VaR of a portfolio can exceed the sum of component VaRs
+  2. Ignores tail shape: two distributions with same VaR can have very different tails
+  3. Procyclical: models trained on calm periods underestimate risk during stress
+
+EXPECTED SHORTFALL (CVaR) — FRTB REQUIREMENT
+The Fundamental Review of the Trading Book (FRTB, Basel IV) replaced VaR with
+Expected Shortfall (ES) at 97.5% confidence as the primary market risk metric.
+ES = average of all losses exceeding the VaR threshold.
+Capital requirement: ES-based model is more conservative in fat-tailed distributions.
+
+FRTB — KEY CHANGES (EFFECTIVE 2025):
+  - Move from 99% VaR to 97.5% ES as primary metric
+  - More granular trading desk-level model approval
+  - Revised Standardised Approach (SA) as fallback/floor
+  - P&L Attribution Test: internal model outputs must align with front-office P&L
+  - Non-modellable risk factors (NMRFs) get punitive capital add-ons
+  - Output floor: internal models cannot produce RWA below 72.5% of SA floor
+
+INTERNAL MODELS APPROACH (IMA):
+  - Must pass backtesting: VaR exceptions should not exceed 4 in 250 trading days
+  - Stressed ES: ES recalibrated to a 12-month stress period (e.g., 2007-2008)
+  - Liquidity-adjusted holding periods for illiquid positions
+
+================================================================================
+OPERATIONAL RISK — MEASUREMENT APPROACHES
+================================================================================
+
+DEFINITION: Risk of loss resulting from inadequate or failed internal processes,
+people, systems, or from external events (includes legal risk).
+
+Basel III Operational Risk Categories (Basel Event Type Classification):
+  1. Internal Fraud
+  2. External Fraud (cybercrime, theft, cheque fraud)
+  3. Employment Practices and Workplace Safety
+  4. Clients, Products, and Business Practices (mis-selling, fiduciary failures)
+  5. Damage to Physical Assets
+  6. Business Disruption and System Failures
+  7. Execution, Delivery, and Process Management
+
+MEASUREMENT APPROACHES (EVOLUTION):
+  Basic Indicator Approach (BIA): Capital = 15% × average gross income (3 years)
+  Standardised Approach (TSA): Capital = business line specific % × gross income
+  Advanced Measurement Approach (AMA): Internal loss data + scenarios + external data
+  NEW Standardised Approach (Basel IV SA-OR, effective 2023):
+    - Replaces all three above
+    - Business Indicator (BI) component × Internal Loss Multiplier (ILM)
+    - Incentivises loss data collection: banks with higher historical losses hold more capital
+
+KEY OPERATIONAL RISK METRICS FOR RISK MANAGERS:
+  - Annual Loss Expectancy (ALE) = frequency × severity
+  - Key Risk Indicators (KRIs): failed transactions, system downtime, staff turnover
+  - Scenario Analysis: tail-risk scenarios (e.g., cyber breach, rogue trader)
+
+================================================================================
+LIQUIDITY REQUIREMENTS
+================================================================================
+
+LIQUIDITY COVERAGE RATIO (LCR):
+  LCR = High Quality Liquid Assets (HQLA) / Net Cash Outflows (30 days) ≥ 100%
+  Purpose: Ensures banks can survive a 30-day severe liquidity stress scenario.
+  HQLA includes: central bank reserves, sovereign bonds, agency securities.
+  Level 1 assets (0% haircut), Level 2A (15% haircut), Level 2B (25-50% haircut).
+
+NET STABLE FUNDING RATIO (NSFR):
+  NSFR = Available Stable Funding (ASF) / Required Stable Funding (RSF) ≥ 100%
+  Purpose: Encourages funding of long-term assets with stable long-term liabilities.
+  Addresses the maturity mismatch that amplified the 2008 crisis.
+
+================================================================================
+LEVERAGE RATIO
+================================================================================
+
+Basel III Leverage Ratio = Tier 1 Capital / Total Exposure ≥ 3%
+A simple, non-risk-based backstop to prevent excessive balance sheet leverage.
+Does NOT use risk weights — treats all exposures equally.
+G-SIBs face higher leverage ratio requirements (up to 5% in the US for holding companies).
+
+================================================================================
+BASEL IV / BASEL III ENDGAME KEY CHANGES
+================================================================================
+
+1. OUTPUT FLOOR (72.5%): Internal model RWA cannot be less than 72.5% of SA RWA.
+   Prevents arbitrage where sophisticated models produce artificially low capital requirements.
+   Most significant change for large Canadian banks: materially increases RWA.
+
+2. REVISED CREDIT RISK SA: Granular risk weights based on exposure type, LTV, credit quality.
+   Reduced reliance on external credit ratings.
+
+3. REVISED OPERATIONAL RISK: Single standardised approach replacing BIA/TSA/AMA.
+
+4. FRTB (MARKET RISK): ES replaces VaR; desk-level model approval.
+
+5. CVA RISK: Revised Credit Valuation Adjustment framework for OTC derivatives.
+
+Implementation timeline: Most jurisdictions targeting 2025-2027 for full Basel IV.
+OSFI (Canada) issued final Basel III reforms guidance effective Q1 2023.
+
+================================================================================
+RISK-WEIGHTED ASSETS (RWA) — THE DENOMINATOR
+================================================================================
+
+RWA is not the same as total assets. Risk weights are applied to convert exposures
+into risk-adjusted equivalents:
+  - Cash / central bank reserves: 0% risk weight
+  - OECD sovereign bonds: 0-20% risk weight
+  - Residential mortgage: 35% (standardised) or model-estimated
+  - Corporate lending: 100% (unrated), 20-150% (rated)
+  - Equity positions: 100-250% risk weight
+  - Securitisation tranches: up to 1250% (highest risk weight possible)
+
+The three categories of RWA:
+  Credit RWA: typically 75-85% of total RWA
+  Market RWA: typically 5-15%
+  Operational RWA: typically 10-15%

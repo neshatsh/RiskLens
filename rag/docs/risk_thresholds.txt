@@ -1,0 +1,236 @@
+INDUSTRY-STANDARD RISK THRESHOLDS AND RED FLAGS
+RiskLens Risk Threshold Reference | Version 1.0
+
+================================================================================
+MARKET RISK THRESHOLDS
+================================================================================
+
+VALUE AT RISK (VaR) LIMITS — BY PORTFOLIO SIZE
+  Retail/small institutional (AUM < $100M):
+    - 1-day 95% VaR warning: > 1.0% of AUM
+    - 1-day 99% VaR breach: > 2.0% of AUM
+    - Escalation to CRO: > 3.0% of AUM
+
+  Mid-size institutional (AUM $100M–$1B):
+    - 1-day 95% VaR warning: > 1.5% of AUM
+    - 1-day 99% VaR breach: > 2.5% of AUM
+    - Escalation to Risk Committee: > 4.0% of AUM
+
+  Large institutional (AUM > $1B):
+    - 1-day 95% VaR warning: > 1.0% of AUM
+    - 1-day 99% VaR breach: > 2.0% of AUM
+    - Basel III backtesting: >4 VaR exceptions in 250 days → Yellow Zone
+    - Basel III backtesting: >9 VaR exceptions in 250 days → Red Zone (model rejection)
+
+VOLATILITY FLAGS BY ASSET CLASS (ANNUALISED)
+  Government bonds / investment grade fixed income:
+    - Normal: < 8%
+    - Elevated: 8–15%
+    - High: > 15%
+
+  Investment grade equities (large-cap):
+    - Normal: < 20%
+    - Elevated: 20–35%
+    - High: 35–55%
+    - Extreme: > 55%
+
+  Small-cap / growth equities:
+    - Normal: < 35%
+    - Elevated: 35–55%
+    - High: > 55%
+
+  Commodities (e.g., gold, oil):
+    - Normal: < 20%
+    - Elevated: 20–35%
+    - High: > 35%
+
+  Cryptocurrencies (if held):
+    - All levels significantly higher; regulatory capital treatment uncertain
+
+DRAWDOWN TRIGGER LEVELS (PEAK-TO-TROUGH)
+  Single position alerts:
+    - Watch-list: -15% from 52-week high
+    - Warning: -25% from 52-week high
+    - Alert: -30% from peak
+    - Critical / forced review: -40% from peak
+    - Extreme / potential impairment: -50% from peak
+
+  Portfolio-level drawdown:
+    - Reporting trigger: -8% portfolio drawdown
+    - Risk committee review: -12% portfolio drawdown
+    - CRO escalation: -20% portfolio drawdown
+
+BETA / MARKET SENSITIVITY
+  - Beta < 0.5: Defensive (gold, utilities, bonds) — acts as portfolio hedge
+  - Beta 0.5–1.0: Moderate market sensitivity
+  - Beta 1.0–1.5: Market-like behaviour, no amplification
+  - Beta > 1.5: High market sensitivity — amplifies both gains and losses
+  - Beta > 2.0: Extreme sensitivity — warrants position size limits
+
+CORRELATION AND CONCENTRATION
+  Herfindahl-Hirschman Index (HHI) — portfolio concentration:
+    - HHI < 0.10: Well-diversified
+    - HHI 0.10–0.25: Moderate concentration
+    - HHI > 0.25: High concentration — requires diversification review
+    - HHI > 0.40: Extreme concentration — near-single-name exposure
+
+  Single-name concentration limits (typical Canadian bank policy):
+    - Maximum 10% of portfolio in a single name (equity)
+    - Maximum 20% in a single sector
+    - Maximum 30% in a single asset class (excluding fixed income)
+
+  Correlation risk:
+    - Correlation > 0.85 between two large positions = high co-movement risk
+    - Average pairwise correlation > 0.70 = portfolio lacks diversification
+
+MOVING AVERAGE SIGNALS
+  Golden Cross (50-day MA crosses above 200-day MA):
+    - Typically bullish technical signal; not a risk flag, but context for review
+
+  Death Cross (50-day MA crosses below 200-day MA):
+    - Risk flag: momentum deterioration; potential trend reversal
+    - Particularly significant for large portfolio positions (>5% weight)
+
+================================================================================
+CREDIT RISK THRESHOLDS
+================================================================================
+
+CREDIT RATING EQUIVALENTS AND RISK WEIGHTS (STANDARDISED APPROACH)
+  AAA / AA:        20% risk weight  — investment grade, minimal default risk
+  A:               50% risk weight  — investment grade, low default risk
+  BBB:            100% risk weight  — investment grade, moderate default risk
+  BB:             100% risk weight  — speculative grade / high yield
+  B:              150% risk weight  — highly speculative, elevated default risk
+  CCC and below: 150% risk weight  — distressed / near-default
+
+PROBABILITY OF DEFAULT (PD) THRESHOLDS
+  Basel Internal Rating Categories:
+    - PD < 0.10% (BP = basis points): Equivalent to AA/AAA
+    - PD 0.10–0.25%: Equivalent to A
+    - PD 0.25–0.50%: Equivalent to BBB
+    - PD 0.50–2.0%: Equivalent to BB
+    - PD 2.0–15%: Equivalent to B
+    - PD > 15%: Non-performing / in default
+
+  Internal Watch-list Triggers:
+    - PD increase > 100bps in 90 days: Flag for credit review
+    - Downgrades from investment grade to speculative grade: Immediate review
+    - Any downgrade to CCC: Escalate to Credit Committee
+
+CREDIT SPREAD THRESHOLDS
+  Investment Grade (IG) Corporate Spreads:
+    - Normal: < 100bps over Treasuries
+    - Elevated: 100–200bps
+    - Stress: > 200bps
+    - Crisis: > 400bps (2009 peak IG spreads reached ~600bps)
+
+  High Yield (HY) Spreads (BAMLH0A0HYM2):
+    - Normal: < 300bps
+    - Elevated: 300–500bps
+    - Stress: > 500bps
+    - Crisis: > 800bps (2009 peak HY spreads exceeded 2000bps)
+
+  CDS Spread Triggers (Credit Default Swap):
+    - 5-year CDS > 100bps: Credit stress flagged
+    - 5-year CDS > 300bps: High credit risk
+    - 5-year CDS > 500bps: Near-distressed credit
+
+ALTMAN Z-SCORE BOUNDARIES
+  Manufacturing companies: Z < 1.81 = Distress | 1.81–2.99 = Grey | >2.99 = Safe
+  Non-manufacturing/services: Z < 1.23 = Distress | 1.23–2.90 = Grey | >2.90 = Safe
+
+================================================================================
+OPERATIONAL RISK THRESHOLDS
+================================================================================
+
+REGULATORY FINES — MATERIALITY THRESHOLDS
+  - Fine > $1M: Flag in operational risk register
+  - Fine > $10M: Report to Risk Committee
+  - Fine > $100M: Board-level notification; potential reputational score impact
+  - Fine > $1B: Crisis-level operational event (e.g., BNP Paribas $8.9B OFAC settlement)
+
+CYBER / TECHNOLOGY RISK THRESHOLDS
+  - System downtime > 4 hours: Critical operational event
+  - Data breach > 10,000 records: Regulatory notification required (PIPEDA, GDPR)
+  - Ransomware attack: Immediate escalation; potential trading halt
+  - Third-party vendor breach affecting core banking: Systemic risk trigger
+
+KEY PERSON RISK
+  - CEO/CFO departure (unplanned): Medium operational risk flag
+  - CEO/CFO departure (negative circumstances): High operational risk flag
+  - Multiple C-suite departures within 90 days: Critical key person risk flag
+
+LEGAL / REGULATORY RISK MATERIALITY
+  - Class action filed: Report to legal risk team
+  - Regulatory investigation opened: High risk flag
+  - Regulatory order issued: Critical flag; potential capital impact
+  - Criminal indictment (institution or executives): CRITICAL — immediate CRO escalation
+
+================================================================================
+MACRO / SYSTEMIC RISK THRESHOLDS
+================================================================================
+
+YIELD CURVE SIGNALS
+  - 10Y-2Y spread < 0 (inverted): Recession warning signal
+    Historical note: Yield curve inverted before every US recession since 1960.
+    Average lead time: 12–18 months before recession onset.
+  - 10Y-2Y spread < -0.50: Strong recession signal
+  - 10Y-2Y spread < -1.00: Extreme inversion (rare; last seen early 2023)
+
+  Duration risk thresholds:
+    - Duration of bond portfolio > 10 years: High sensitivity to rate changes
+    - A 100bps rate increase on duration-10 bond ≈ -10% price impact
+    - DV01 (dollar value of 1bp) per $1M face: ~$1,000 for 10yr treasury
+
+VIX (CBOE VOLATILITY INDEX) REGIMES
+  - VIX < 15: Low volatility / risk-on environment
+  - VIX 15–25: Normal volatility range
+  - VIX 25–35: Elevated uncertainty / risk-off
+  - VIX > 35: Fear/crisis (VIX hit 82 in March 2020, 80 in October 2008)
+  - VIX spike > 50% in one week: Market stress signal
+
+INFLATION REGIME
+  - CPI (YoY) < 2%: Below target; potential deflation risk
+  - CPI 2–4%: Target range (central bank comfort zone)
+  - CPI > 4%: Above target; rate hike pressure
+  - CPI > 6%: High inflation regime; real return compression
+  - CPI > 8%: Extreme inflation; aggressive monetary tightening likely
+
+FEDERAL FUNDS RATE / POLICY RATE
+  - Rate > 5%: Restrictive monetary policy; pressure on leveraged positions, duration
+  - Rate increase > 75bps in single meeting: Rare; aggressive tightening (2022 cycle)
+  - Rate inversion vs short-term bonds: Funding cost pressure for banks
+
+CANADIAN-SPECIFIC THRESHOLDS (OSFI)
+  - OSFI Domestic Stability Buffer (DSB): 3.5% of RWA (Q4 2023)
+    Buffer that OSFI can release during stress to support lending
+  - Household debt-to-income ratio > 180%: Systemic household leverage risk (Canada: ~185%)
+  - Uninsured mortgage LTV > 80%: Elevated real estate credit risk
+  - Office real estate vacancy > 20%: Commercial real estate stress signal
+
+================================================================================
+PORTFOLIO-LEVEL COMPOSITE RISK SCORES — INTERPRETATION GUIDE
+================================================================================
+
+OVERALL RISK SCORE 0–100 (RiskLens Scoring Framework)
+
+  0–34   LOW RISK
+    Interpretation: Portfolio within normal operating parameters. No material
+    breaches of standard risk thresholds across all three Basel pillars.
+    Action: Routine monitoring; standard weekly risk reporting.
+
+  35–54  MEDIUM RISK
+    Interpretation: One or more risk indicators elevated above normal thresholds.
+    Portfolio warrants closer monitoring but capital adequacy is not threatened.
+    Action: Increase monitoring frequency; document risk factors in CRO report.
+
+  55–74  HIGH RISK
+    Interpretation: Multiple significant risk flags across pillars. Capital buffer
+    consumption is possible in stress scenarios. Regulatory escalation may be warranted.
+    Action: HITL review required. Risk Committee notification. Consider position adjustments.
+
+  75–100 CRITICAL RISK
+    Interpretation: Severe risk profile. One or more hard limits breached. Potential
+    capital adequacy impact. Regulatory reporting may be required.
+    Action: Immediate CRO escalation. Emergency Risk Committee meeting.
+    Consider emergency deleveraging or hedging. Regulatory notification if applicable.
