@@ -245,50 +245,64 @@ risklens/
 └── tests/
 ```
 
-[//]: # ()
+
 [//]: # (## Known Limitations & Future Work)
 
 [//]: # ()
+[//]: # ()
 [//]: # (**Current limitations:**)
 
+[//]: # ()
 [//]: # (- Credit scoring is a proxy model &#40;market-implied&#41;, not a true PD/LGD model)
 
+[//]: # ()
 [//]: # (- News coverage gaps without a premium API subscription)
 
+[//]: # ()
 [//]: # (- FRED macro data has release lags &#40;some series update monthly/quarterly&#41;)
 
+[//]: # ()
 [//]: # (- Mixed CAD/USD portfolio without FX risk modelling)
 
+[//]: # ()
 [//]: # (- RAG uses cosine similarity only; a cross-encoder reranking step would improve precision)
 
 [//]: # ()
+[//]: # ()
 [//]: # (**Planned:**)
 
+[//]: # ()
 [//]: # (- Stress testing module: 2008 crisis, COVID March 2020, 2022 rate shock scenarios)
 
+[//]: # ()
 [//]: # (- Full Merton model for distance-to-default)
 
+[//]: # ()
 [//]: # (- Liquidity risk module &#40;bid-ask spread, market impact&#41;)
 
+[//]: # ()
 [//]: # (- OSFI-specific capital ratio monitoring for Canadian bank holdings)
 
+[//]: # ()
 [//]: # (- Automated Slack/email alerts for CRITICAL events)
 
+[//]: # ()
 [//]: # (- Bloomberg/Refinitiv integration for institutional-grade data)
 
 
-[//]: # (## Background)
-
-[//]: # ()
-[//]: # (RiskLens is the second project in a two-part portfolio. The first, **[DocuLens]&#40;https://github.com/neshatsh/Doculens-RAG-platform&#41;**, built a production RAG pipeline from scratch &#40;without frameworks&#41; for legal and financial documents: BERT reranking, VLM extraction, FastAPI, Docker, 78% test coverage. RiskLens introduces agentic orchestration with LangGraph and LangChain, applying the same document intelligence principles to live portfolio risk monitoring.)
-
-[//]: # ()
-[//]: # (Together they demonstrate both levels: building AI systems from first principles, and orchestrating them at production scale with modern frameworks.)
+## Background
 
 
-[//]: # (## Author)
+RiskLens is the second project in a two-part portfolio. The first, **[DocuLens](https://github.com/neshatsh/Doculens-RAG-platform)**, built a production RAG pipeline from scratch (without frameworks) for legal and financial documents: BERT reranking, VLM extraction, FastAPI, Docker, 78% test coverage. RiskLens introduces agentic orchestration with LangGraph and LangChain, applying the same document intelligence principles to live portfolio risk monitoring.
 
-[//]: # ()
-[//]: # (**Neshat Sharbatdar**)
 
-[//]: # (Toronto, ON · [LinkedIn]&#40;https://www.linkedin.com/in/neshat-sharbatdar/&#41; · [GitHub]&#40;https://github.com/neshatsh&#41; · [DocuLens]&#40;https://github.com/neshatsh/Doculens-RAG-platform&#41;)
+Together they demonstrate both levels: building AI systems from first principles, and orchestrating them at production scale with modern frameworks.
+
+
+## Author
+
+
+**Neshat Sharbatdar**
+
+Toronto, ON · [LinkedIn](https://www.linkedin.com/in/neshat-sharbatdar/) · [GitHub](https://github.com/neshatsh) · [DocuLens](https://github.com/neshatsh/Doculens-RAG-platform)
+
