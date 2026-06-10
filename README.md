@@ -8,13 +8,13 @@
 
 **RiskLens** is a production-grade agentic AI system built on LangGraph and LangChain that monitors a financial portfolio across all three Basel III risk pillars, runs specialist agents in parallel, and generates a structured Risk Intelligence Briefing with regulatory citations and a human-in-the-loop review checkpoint.
 
-[//]: # (---)
+---
 
-[//]: # ()
-[//]: # (![RiskLens Demo]&#40;demo.gif&#41;)
 
-[//]: # ()
-[//]: # (---)
+![RiskLens Demo](demo.gif)
+
+
+---
 
 ## Architecture
 
